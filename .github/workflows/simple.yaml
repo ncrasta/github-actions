@@ -11,6 +11,7 @@ jobs:
       - name: Python
         run: python3 --version
   check-platform:
+    name: Check Platform
     runs-on: ubuntu-18.04
     steps:
       - name: OS platform
