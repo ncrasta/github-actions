@@ -1,0 +1,20 @@
+name: Github Environment Variables
+on: [push]
+
+jobs:
+  run-github-actions:
+    name: List Github Env Variables
+    runs-on: ubuntu-18.04
+    steps:
+      - name: List
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo  "${{ github.token }}"
+      - name: Clone
+        run: |
+          git clone git@github:$GITHUB_REPOSITORY
+          git checkout $GITHUB_SHA
+
+
