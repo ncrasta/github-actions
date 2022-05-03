@@ -1,0 +1,17 @@
+name: Shell commands
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Bash
+        run: echo "$(which bash)"
+      - name: Multi-line
+        run: |
+          python3 --version
+          node -v
+          npm -v
+
+
+
