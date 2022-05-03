@@ -7,11 +7,16 @@ jobs:
     steps:
       - name: Bash
         run: echo "$(which bash)"
-      - name: Multi-line
+      - name: Python
+        run: python3 --version
+  check-platform:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: OS platform
         run: |
-          python3 --version
-          node -v
-          npm -v
+          import platform
+          print(platform.processor())
+        shell: python
 
 
 
