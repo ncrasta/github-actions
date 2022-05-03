@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   run-shell-command:
+    name: Run Shell Command
     runs-on: ubuntu-18.04
     steps:
       - name: Bash
