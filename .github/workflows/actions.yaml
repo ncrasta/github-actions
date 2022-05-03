@@ -1,0 +1,18 @@
+name: Action Workflow
+on: [push]
+
+jobs:
+  run-github-actions:
+    name: run-github-actions
+    runs-on: ubuntu-18.04
+    steps:
+      - name: List Files Before Clone
+        run: |
+          pwd
+          ls -a
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files After Clone
+        run: |
+          pwd
+          ls -a
