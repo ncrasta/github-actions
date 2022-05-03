@@ -12,9 +12,9 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo  "${{ github.token }}"
-      - name: Clone
-        run: |
-          git clone git@github:$GITHUB_REPOSITORY
-          git checkout $GITHUB_SHA
+      #- name: Clone
+      #  run: |
+      #    git clone git@github:$GITHUB_REPOSITORY
+      #    git checkout $GITHUB_SHA
 
 
