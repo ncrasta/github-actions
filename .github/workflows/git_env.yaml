@@ -1,21 +1,15 @@
-name: Github Environment Variables
+name: Default Github Environment Variables
 on: [push]
 
 jobs:
-  run-github-actions:
-    name: List Github Env Variables
-    runs-on: ubuntu-18.04
+··github-actions-environment-variables-ubuntu:
+    name:  List·of·the·GitHub·Actions·environment·variables·on·Ubuntu 20.04
+    runs-on: ubuntu-20.04
     steps:
       - name: List
-        run: |
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo  "${{ github.token }}"
-          echo  "${GITHUB_REF##*/}"
+        run: env
       #- name: Clone
       #  run: |
       #    git clone git@github:$GITHUB_REPOSITORY
       #    git checkout $GITHUB_SHA
-
 
