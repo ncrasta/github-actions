@@ -2,7 +2,7 @@ name: Default Github Environment Variables
 on: [push]
 
 jobs:
-··github-actions-environment-variables-ubuntu:
+  github-actions-environment-variables-ubuntu:
     name:  List·of·the·GitHub·Actions·environment·variables·on·Ubuntu 20.04
     runs-on: ubuntu-20.04
     steps:
