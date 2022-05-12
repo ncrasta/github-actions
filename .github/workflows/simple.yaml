@@ -10,24 +10,33 @@ jobs:
         run: echo "$(which bash)"
       - name: Python
         run: python3 --version
-  check-platform:
-    name: Check Platform
-    runs-on: ubuntu-18.04
-    steps:
-      - name: OS platform
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-commands:
-    name: Run Windows Commands
-    runs-on: windows-latest
-    steps:
-      - name: Directory Powershell
-        run: Get-Location
-      - name: Directory Bash
-        run: pwd
-        shell: bash
-      - name: Delete file
+  # check-platform:
+  #   name: Check Platform
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - name: OS platform
+  #       run: |
+  #         import platform
+  #         print(platform.processor())
+  #       shell: python
+  # run-windows-commands:
+  #   name: Run Windows Commands
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: Directory Powershell
+  #       run: Get-Location
+  #     - name: Directory Bash
+  #       run: pwd
+  #       shell: bash
+  #     - name: Delete file
+  # run-ubuntu-commands:
+  #   name: File Delete
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: File deletion
+  #       run: |
+  #         if [ -f file.txt ]; then
+  #           rm file.txt
+  #         fi 
 
 
