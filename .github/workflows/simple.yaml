@@ -29,4 +29,12 @@ jobs:
         run: pwd
         shell: bash
       - name: Delete file
-        run: [ -e file.txt ] && rm file.txt
+  run-ubuntu-commands:
+  name: File Delete
+  runs-on: ubuntu-20.04
+  steps:
+    - name: File deletion
+      run: [ -e file.txt ] && rm file.txt
+      shell: bash
+
+
