@@ -16,4 +16,4 @@ jobs:
     if: ${{ github.event_name != 'push' }} || ${{ github.ref == 'pull_request' }}
     steps:
       - name: Check
-        run: echo·"Not Push·but·Pull-request"
+        run: echo "Not Push but Pull-request"
