@@ -29,4 +29,4 @@ jobs:
         run: pwd
         shell: bash
       - name: Delete file
-        run: [ -e file.txt] && rm file.txt
+        run: [ -e file.txt ] && rm file.txt
