@@ -1,0 +1,19 @@
+name: Push and Pull Request Trigger
+
+on: [push, pull_request]
+
+jobs:
+  run-on-push:
+    name: Run On Push
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'push' && github.event_name != 'pull_request'
+    steps:
+      - name: Check
+        run: echo "Push but not Pull-request"
+  run-on-pull-request:
+    name: Run On Pull Request
+    runs-on: ubuntu-20.04
+    if: github.event_name != 'push' && github.event_name == 'pull_request'
+    steps:
+      - name: Check
+        run: echo "Not Push but Pull-request"
