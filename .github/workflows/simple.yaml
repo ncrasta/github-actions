@@ -35,7 +35,7 @@ jobs:
   steps:
     - name: File deletion
       run: |
-        if [ -e file.txt ]; then 
+        if [ -f file.txt ]; then 
             rm file.txt; 
         fi
       shell: bash
