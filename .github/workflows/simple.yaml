@@ -10,15 +10,15 @@ jobs:
         run: echo "$(which bash)"
       - name: Python
         run: python3 --version
-  # check-platform:
-  #   name: Check Platform
-  #   runs-on: ubuntu-18.04
-  #   steps:
-  #     - name: OS platform
-  #       run: |
-  #         import platform
-  #         print(platform.processor())
-  #       shell: python
+  check-platform:
+    name: Check Platform
+    runs-on: ubuntu-18.04
+    steps:
+      - name: OS platform
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
   # run-windows-commands:
   #   name: Run Windows Commands
   #   runs-on: windows-latest
