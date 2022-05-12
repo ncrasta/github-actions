@@ -19,16 +19,15 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
-  # run-windows-commands:
-  #   name: Run Windows Commands
-  #   runs-on: windows-latest
-  #   steps:
-  #     - name: Directory Powershell
-  #       run: Get-Location
-  #     - name: Directory Bash
-  #       run: pwd
-  #       shell: bash
-  #     - name: Delete file
+  run-windows-commands:
+    name: Run Windows Commands
+    runs-on: windows-latest
+    steps:
+      - name: Directory Powershell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
   # run-ubuntu-commands:
   #   name: File Delete
   #   runs-on: ubuntu-20.04
