@@ -36,6 +36,8 @@ jobs:
         run: |
           if [ -f file.txt ]; then
             rm file.txt
+          else
+            echo "file.txt not found"
           fi
 
 
