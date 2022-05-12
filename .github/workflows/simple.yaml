@@ -34,7 +34,9 @@ jobs:
   runs-on: ubuntu-20.04
   steps:
     - name: File deletion
-      run: rm file.txt  || true 
-      shell: bash
+      run: |
+	if [ -f file.txt ]; then
+          rm file.txt
+        fi 
 
 
