@@ -1,6 +1,6 @@
 name: Push and Pull Request Trigger
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   run-on-push:
