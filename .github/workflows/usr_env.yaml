@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Global Variable
         run: |
-          echo "Global env: ${GLOBAL_ENV}"
+          ls -a
