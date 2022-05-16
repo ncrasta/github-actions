@@ -3,12 +3,12 @@ name: User Defined Env Vars
 on: [push]
 
 env:
-    GLOBAL_ENV: "Global - available to all"
+  GLOBAL_ENV: "Global - available to all"
 
 jobs:
   log-env:
 	name: Log Env Vars
-	runs-on: ubuntu-latest
+	runs-on: ubuntu-18.04
 	env:
 	  JOB_ENV: "Job - availble to all steps"
 	steps:
