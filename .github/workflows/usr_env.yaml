@@ -10,7 +10,10 @@ jobs:
   log-env:
     name: Log Env
     runs-on: ubuntu-18.04
+    env:
+    	JOB_VARIABLE: job
     steps:
       - name: Global Variable
         run: |
           echo ${GLOBAL_VARIABLE}
+          echo ${JOB_VARIABLE}
