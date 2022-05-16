@@ -8,8 +8,4 @@ jobs:
     steps:
       - name: List
         run: env
-      #- name: Clone
-      #  run: |
-      #    git clone git@github:$GITHUB_REPOSITORY
-      #    git checkout $GITHUB_SHA
 
