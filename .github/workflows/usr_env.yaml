@@ -3,4 +3,10 @@ name: User Defined Env Vars
 on: [push]
 
 
-
+jobs:
+	log-env:
+		runs-on: ubuntu-18.04
+		name: Log Env
+		steps:
+			- name: Global
+				echo "Global"
