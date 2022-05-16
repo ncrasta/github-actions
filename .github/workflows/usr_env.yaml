@@ -3,17 +3,11 @@ name: User Defined Env Vars
 on: [push]
 
 jobs:
-  run-github-actions:
-    name: Run Github Actions
+  log-env:
+    name: Log Env
     runs-on: ubuntu-18.04
     steps:
-      - name: List Files Before Clone
-        run: |
-          pwd
-          ls -a
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: List Files After Clone
+      - name: Global Variable
         run: |
           pwd
           ls -a
