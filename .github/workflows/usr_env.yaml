@@ -7,8 +7,8 @@ env:
 
 jobs:
 	log-env:
-		name: Log Env Vars
 		runs-on: ubuntu-18.04
+		name: Log Env Vars
 		env:
 			JOB_ENV: Job availble to all steps
 		steps:
