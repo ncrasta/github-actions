@@ -7,6 +7,7 @@ env:
 
 jobs:
 	log-env:
+		name: Log Env Vars
 		runs-on: ubuntu-latest
 		env:
 			JOB_ENV: "Job - availble to all steps"
@@ -16,6 +17,4 @@ jobs:
 				STEP_ENV: "Step -only within THIS step"
 			  run: |
 				echo "GLOBAL: ${GLOBAL_ENV}"
-				echo "JOB: ${JOB_ENV}"
-				echo "STEP: ${STEP_ENV}"
 
