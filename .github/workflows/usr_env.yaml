@@ -18,25 +18,4 @@ jobs:
 				echo "GLOBAL: ${GLOBAL_ENV}"
 				echo "JOB: ${JOB_ENV}"
 				echo "STEP: ${STEP_ENV}"
-			- name: Variable Scope - 2
-				run: |
-				echo "GLOBAL: ${GLOBAL_ENV}"
-				echo "JOB: ${JOB_ENV}"
-				echo "STEP: ${STEP_ENV}"
-	log-default-vars:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Git Default Vars
-			  run: |
-				echo "HOME: ${HOME}"
-				echo "GITHUB_ACTION: ${GITHUB_ACTION}"
-				echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
-				echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-				echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
-				echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
-				echo "GITHUB_SHA: ${GITHUB_SHA}"
-				echo "GITHUB_REF: ${GITHUB_REF}"
-				echo "GLOBAL: ${GLOBAL_ENV}"
-				echo "JOB: ${JOB_ENV}"
-				echo "STEP: ${STEP_ENV}"
 
