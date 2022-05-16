@@ -4,7 +4,7 @@ on: [push]
 
 
 env:
-  GLOBAL_FOLDER: /global/
+  GLOBAL_VARIABLE: global
 
 jobs:
   log-env:
@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Global Variable
         run: |
-          ls -a
+          echo ${GLOBAL_VARIABLE}
