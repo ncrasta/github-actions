@@ -6,15 +6,15 @@ env:
     GLOBAL_ENV: "Global - available to all"
 
 jobs:
-	log-env:
-		name: Log Env Vars
-		runs-on: ubuntu-latest
+  log-env:
+	name: Log Env Vars
+	runs-on: ubuntu-latest
+	env:
+	  JOB_ENV: "Job - availble to all steps"
+	steps:
+	  - name: Variable Scope - 1
 		env:
-			JOB_ENV: "Job - availble to all steps"
-		steps:
-			- name: Variable Scope - 1
-			  env:
-				STEP_ENV: "Step -only within THIS step"
-			  run: |
-				echo "GLOBAL: ${GLOBAL_ENV}"
+		  STEP_ENV: "Step -only within THIS step"
+		  run: |
+			echo "GLOBAL: ${GLOBAL_ENV}"
 
