@@ -2,15 +2,5 @@ name: User Defined Env Vars
 
 on: [push]
 
-jobs:
-	log-env:
-		runs-on: ubuntu-18.04
-		name: Log Env Vars
-		env:
-			JOB_ENV: Job availble to all steps
-		steps:
-			- name: Variable Scope - 1
-			  env:
-			  	STEP_ENV: Step only within THIS step
-			  run: echo "GLOBAL: ${GLOBAL_ENV}"
+
 
