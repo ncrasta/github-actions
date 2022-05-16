@@ -10,8 +10,6 @@ jobs:
   log-env:
     name: Log Env
     runs-on: ubuntu-18.04
-		env:
-		  LOCAL_VARIABLE: local
     steps:
       - name: Global Variable
         run: |
