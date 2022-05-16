@@ -2,6 +2,9 @@ name: User Defined Env Vars
 
 on: [push]
 
+env:
+	GLOBAL_ENV: global_env
+
 jobs:
   log-env:
     name: Log Env
@@ -9,5 +12,4 @@ jobs:
     steps:
       - name: Global Variable
         run: |
-          pwd
-          ls -a
+          echo "Global env: ${GLOBAL_ENV}"
