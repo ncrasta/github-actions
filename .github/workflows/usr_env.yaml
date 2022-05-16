@@ -3,7 +3,7 @@ name: User Defined Env Vars
 on: [push]
 
 env:
-	GLOBAL_ENV: Global available to all
+	GLOBAL_ENV: Global
 
 jobs:
 	log-env:
