@@ -2,9 +2,6 @@ name: User Defined Env Vars
 
 on: [push]
 
-env:
-	GLOBAL_ENV: Global
-
 jobs:
 	log-env:
 		runs-on: ubuntu-18.04
