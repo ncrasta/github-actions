@@ -2,8 +2,9 @@ name: User Defined Env Vars
 
 on: [push]
 
+
 env:
-	GLOBAL_ENV: global_env
+  GLOBAL_FOLDER: /global/
 
 jobs:
   log-env:
