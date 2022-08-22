@@ -4,7 +4,7 @@ on: [push]
 jobs:
   run-shell-command:
     name: Run Shell Command
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Bash
         run: echo "$(which bash)"
@@ -12,7 +12,7 @@ jobs:
         run: python3 --version
   check-platform:
     name: Check Platform
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: OS platform
         run: |
