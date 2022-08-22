@@ -1,0 +1,7 @@
+name: Schedule Actions Workflow
+on:
+  push:
+  schedule:
+    - */5 * * * *
+jobs:
+  
