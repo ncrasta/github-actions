@@ -1,7 +1,7 @@
 name: Schedule Actions Workflow
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
     github-actions-sechedule:
