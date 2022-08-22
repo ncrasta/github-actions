@@ -1,7 +1,10 @@
 name: Schedule Actions Workflow
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
     github-actions-sechedule:
