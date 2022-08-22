@@ -2,10 +2,11 @@ name: Schedule Actions Workflow
 on:
   schedule:
     - cron: '*/5 * * * *'
+
 jobs:
     github-actions-sechedule:
-    name:  List of GitHub Actions Env Variables on Ubuntu 20.04
-    runs-on: ubuntu-20.04
-    steps:
-      - name: List
-        run: env
+      name:  List of GitHub Actions Env Variables on Ubuntu 20.04
+      runs-on: ubuntu-20.04
+      steps:
+        - name: List
+          run: env
