@@ -1,8 +1,7 @@
 name: Default Github Environment Variables
 on: [push]
 env:
-  ARCHIVE_NAME: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
-
+  ARCHIVE_NAME: ${{ github.event.repository.name }}
 jobs:
   github-actions-environment-variables-ubuntu:
     name:  List of GitHub Actions Env Variables on Ubuntu 20.04
