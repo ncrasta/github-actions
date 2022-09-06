@@ -1,5 +1,7 @@
 name: Default Github Environment Variables
 on: [push]
+env:
+  ARCHIVE_NAME: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
 
 jobs:
   github-actions-environment-variables-ubuntu:
@@ -10,5 +12,5 @@ jobs:
         run: env
       - name: git release tag
         run: |
-          echo ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
+          echo ${{ env.ARCHIVE_NAME }}
           
