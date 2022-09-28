@@ -12,8 +12,10 @@ jobs:
               run: echo "Test" > README.md
             - name: Commit and push changes
               run: |
+                  git config --global user.email "naveen.crasta@gmail.com"
+                  git config --global user.name "Naveen Crasta"
                   git add -A
-                  git commit -m "commit message"
+                  git commit -m "Update README"
                   git push
 
 
