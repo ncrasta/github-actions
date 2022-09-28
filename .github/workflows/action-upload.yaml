@@ -1,5 +1,5 @@
 name: Update and Push to Github
-on: workflow_dispatch
+on: [push]
 jobs:
     resources:
         name: Update resources
