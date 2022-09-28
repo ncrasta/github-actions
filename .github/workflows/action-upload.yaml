@@ -1,7 +1,5 @@
 name: Update and Push to Github
-on: 
-    repository_dispatch:
-        types: [push]
+on: [push]
 jobs:
     resources:
         name: Update resources
@@ -15,6 +13,7 @@ jobs:
               run: echo "Test" >> README.md
 
             - name: Update resources
+              if: github.ref == 'refs/heads/main'
               uses: test-room-7/action-update-file@v1
               with:
                   file-path: README.md
