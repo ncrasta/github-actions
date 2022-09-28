@@ -10,7 +10,7 @@ jobs:
               run: echo "Test" >> README.md
 
             - name: Update resources
-              if: github.ref == 'refs/heads/main'
+              if: startsWith(github.ref, 'refs/tags/')
               uses: test-room-7/action-update-file@v1
               with:
                   file-path: README.md
