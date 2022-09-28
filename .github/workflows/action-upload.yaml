@@ -6,9 +6,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
-
-            - uses: actions/setup-node@v1
-
             - name: Fetch resources
               run: echo "Test" >> README.md
 
@@ -17,6 +14,6 @@ jobs:
               uses: test-room-7/action-update-file@v1
               with:
                   file-path: README.md
-                  commit-msg: Update resources
+                  commit-msg: Update README
                   github-token: ${{ secrets.CI_TOKEN }}
 
