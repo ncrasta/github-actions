@@ -1,5 +1,5 @@
 name: Resources
-on: repository_dispatch
+on: [push]
 jobs:
     resources:
         name: Update resources
