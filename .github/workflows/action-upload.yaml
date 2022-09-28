@@ -1,4 +1,4 @@
-name: Resources
+name: Update and Push to Github
 on: [push]
 jobs:
     resources:
@@ -17,5 +17,5 @@ jobs:
               with:
                   file-path: path/to/file
                   commit-msg: Update resources
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  github-token: ${{ secrets.CI_TOKEN }}
 
