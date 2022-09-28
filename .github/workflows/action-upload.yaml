@@ -1,5 +1,7 @@
 name: Update and Push to Github
-on: [push]
+on: 
+    repository_dispatch:
+        types: [push]
 jobs:
     resources:
         name: Update resources
