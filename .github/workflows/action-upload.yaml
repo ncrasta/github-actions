@@ -1,16 +1,16 @@
 name: Update and Push to Github
-on: workflow_dispatch
+on: push
 jobs:
     resources:
         name: Update resources
         runs-on: ubuntu-latest
+        if: startsWith(github.ref, 'refs/tags/')
         steps:
             - uses: actions/checkout@v1
             - name: Fetch resources
               run: echo "Test" >> README.md
 
             - name: Update resources
-              if: startsWith(github.ref, 'refs/tags/')
               uses: test-room-7/action-update-file@v1
               with:
                   file-path: README.md
