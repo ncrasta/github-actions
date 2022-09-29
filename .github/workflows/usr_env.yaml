@@ -1,0 +1,17 @@
+name: User Defined Env Vars
+
+on: [push]
+
+
+env:
+  GLOBAL_VARIABLE: global
+
+jobs:
+  log-env:
+    name: Log Env
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Global Variable
+        run: |
+          echo ${GLOBAL_VARIABLE}
+          echo ${JOB_VARIABLE}
