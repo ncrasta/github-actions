@@ -2,7 +2,7 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - 'release*' # Push events to matching release*, i.e. release-1.0, release-20.15.10, release-2020-10-28-10-26-15
+      - 'v*' # Push events to matching release*, i.e. release-1.0, release-20.15.10, release-2020-10-28-10-26-15
 
 name: Create Release
 
