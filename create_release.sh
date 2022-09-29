@@ -1,6 +1,6 @@
 #!/bin/bash
 
-release_version=0.0.1
+release_version=0.0.2
 release_name="v${release_version}"
 git add .
 git commit -m "Update release version"
