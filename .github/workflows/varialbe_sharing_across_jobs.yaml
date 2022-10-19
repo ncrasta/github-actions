@@ -13,6 +13,7 @@ jobs:
   Job2:
     name: Print Time-stamp
     runs-on: ubuntu-latest
+    needs: [Job1]
     steps:
       - name: Print
         run: |
