@@ -9,7 +9,7 @@ jobs:
       - name: Record Time-stamp
         run: |
           export TIME_STAMP=$(date +%Y%m%d)_$(date +%H%M%S)
-          echo "TIME_STAMP=${TIME_STAMP}" >> $GITHUB_ENV
+          echo "{TIME_STAMP}=${TIME_STAMP}" >> $GITHUB_ENV
   Job2:
     name: Print Time-stamp
     runs-on: ubuntu-latest
