@@ -3,15 +3,17 @@ on: push
 
 jobs:
   Job1:
-    runs-on: ubuntu-lates
-    name: Record Time-stamp
+    name: Run Github Actions
+    runs-on: ubuntu-20.04
     steps:
-      run: |
+      - name: Record Time-stamp
+        run: |
           export TIME_STAMP=$(date +%Y%m%d)_$(date +%H%M%S)
           echo "TIME_STAMP=${TIME_STAMP}" >> $GITHUB_ENV
   Job2:
-    runs-on: ubuntu-latest
     name: Print Time-stamp
+    runs-on: ubuntu-latest
     steps:
-      run: |
+      - name: Print
+        run: |
             echo "${{ env.TIME_STAMP }}"
