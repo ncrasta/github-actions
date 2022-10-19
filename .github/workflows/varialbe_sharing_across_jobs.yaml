@@ -1,0 +1,13 @@
+name: Share Variable Across Jobs
+on: push
+
+jobs:
+  Time:
+  - name: Record Time-stamp
+    run: |
+      export TIME_STAMP=$(date +%Y%m%d)_$(date +%H%M%S)
+      echo "TIME_STAMP=${TIME_STAMP}" >> $GITHUB_ENV
+  Print:
+  - name: Print Time-stamp
+    run: |
+      echo "${{ env.TIME_STAMP }}"
