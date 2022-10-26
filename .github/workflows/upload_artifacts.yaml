@@ -10,7 +10,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        run: echo ${{ github.sha }} > ${BIN_DIR}/Release.txt
+        run: |
+          echo ${{ github.sha }} > ${BIN_DIR}/Release.txt
+          echo "BIN_DIR=$BIN_DIR" >> $GITHUB_ENV
       - name: Test
         run: cat ${BIN_DIR}/Release.txt
       - name: Release
