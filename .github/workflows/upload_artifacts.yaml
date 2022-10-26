@@ -11,12 +11,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Build
         run: |
-          echo ${{ github.sha }} > ${BIN_DIR}/Release.txt
-          echo "BIN_DIR=$BIN_DIR" >> $GITHUB_ENV
+          echo ${{ github.sha }} > /tmp/Release.txt
       - name: Test
         run: cat ${BIN_DIR}/Release.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: $${ env.BIN_DIR }}/Release.txt
+          files: /tmp/Release.txt
