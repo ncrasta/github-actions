@@ -17,4 +17,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ${BIN_DIR}/Release.txt
+          files: $${ env.BIN_DIR }}/Release.txt
