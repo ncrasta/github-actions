@@ -12,7 +12,7 @@ jobs:
       - name: Build
         run: echo ${{ github.sha }} > ${BIN_DIR}/Release.txt
       - name: Test
-        run: cat Release.txt
+        run: cat ${BIN_DIR}/Release.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
