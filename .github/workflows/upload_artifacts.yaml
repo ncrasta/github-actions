@@ -16,10 +16,11 @@ jobs:
           echo "BUILD_BIN_FOLDER=${BUILD_BIN_FOLDER}" >> $GITHUB_ENV
           mkdir ${BUILD_BIN_FOLDER}
           echo ${{ github.sha }} > ${BUILD_BIN_FOLDER}/Release.txt
+          zip -r ${BUILD_BIN_FOLDER}.zip ${BUILD_BIN_FOLDER}
       - name: Test
         run: cat ${{ env.BUILD_BIN_FOLDER }}/Release.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ${{ github.workspace }}/${{ env.BUILD_BIN_FOLDER }}/Release.txt
+          files: ${{ github.workspace }}/${{ env.BUILD_BIN_FOLDER }}.zip
