@@ -17,7 +17,7 @@ jobs:
           mkdir ${BUILD_BIN_FOLDER}
           echo ${{ github.sha }} > ${BUILD_DIR}/Release.txt
       - name: Test
-        run: cat bin/Release.txt
+        run: cat $${{ env.BUILD_BIN_FOLDER }}/Release.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
