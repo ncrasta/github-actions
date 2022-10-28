@@ -15,7 +15,7 @@ jobs:
           export BUILD_BIN_FOLDER=${BUILD_TAG}_bin
           echo "BUILD_BIN_FOLDER=${BUILD_BIN_FOLDER}" >> $GITHUB_ENV
           mkdir ${BUILD_BIN_FOLDER}
-          echo ${{ github.sha }} > ${BUILD_DIR}/Release.txt
+          echo ${{ github.sha }} > ${BUILD_BIN_FOLDER}/Release.txt
       - name: Test
         run: cat $${{ env.BUILD_BIN_FOLDER }}/Release.txt
       - name: Release
