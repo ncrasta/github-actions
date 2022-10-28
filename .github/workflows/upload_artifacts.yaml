@@ -1,7 +1,6 @@
 name: Upload Artifacts
 on: push
-env:
-  BUILD_DIR: bin
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +9,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Build
         run: |
-          mkdir ${BUILD_DIR}
+          export TIME_STAMP=$(date +%Y%m%d)_$(date +%H%M%S)
+          export BUILD_TAG=${TIME_STAMP}_${GITHUB_REF##*/}
+          echo "BUILD_TAG=${BUILD_TAG}" >> $GITHUB_ENV
+          export BUILD_BIN_FOLDER=${BUILD_TAG}_bin
+          echo "BUILD_BIN_FOLDER=${BUILD_BIN_FOLDER}" >> $GITHUB_ENV
+          mkdir ${BUILD_BIN_FOLDER}
           echo ${{ github.sha }} > ${BUILD_DIR}/Release.txt
       - name: Test
         run: cat bin/Release.txt
@@ -18,4 +22,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ${{ github.workspace }}/${{ env.BUILD_DIR }}/Release.txt
+          files: ${{ github.workspace }}/${{ env.BUILD_BIN_FOLDER }}/Release.txt
