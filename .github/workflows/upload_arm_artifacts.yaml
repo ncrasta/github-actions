@@ -1,0 +1,26 @@
+name: Upload ARM64 Artifacts
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        run: |
+          export TIME_STAMP=$(date +%Y%m%d)_$(date +%H%M%S)
+          export BUILD_TAG=${TIME_STAMP}_${GITHUB_REF##*/}
+          echo "BUILD_TAG=${BUILD_TAG}" >> $GITHUB_ENV
+          export BUILD_BIN_FOLDER=${BUILD_TAG}_arm64
+          echo "BUILD_BIN_FOLDER=${BUILD_BIN_FOLDER}" >> $GITHUB_ENV
+          mkdir ${BUILD_BIN_FOLDER}
+          echo ${{ github.sha }} > ${BUILD_BIN_FOLDER}/Release.txt
+          zip -r ${BUILD_BIN_FOLDER}.zip ${BUILD_BIN_FOLDER}
+      - name: Test
+        run: cat ${{ env.BUILD_BIN_FOLDER }}/Release.txt
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ${{ github.workspace }}/${{ env.BUILD_BIN_FOLDER }}.zip
