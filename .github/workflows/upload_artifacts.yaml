@@ -1,4 +1,4 @@
-name: Upload Artifacts
+name: Upload X64 Artifacts
 on: push
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
           export TIME_STAMP=$(date +%Y%m%d)_$(date +%H%M%S)
           export BUILD_TAG=${TIME_STAMP}_${GITHUB_REF##*/}
           echo "BUILD_TAG=${BUILD_TAG}" >> $GITHUB_ENV
-          export BUILD_BIN_FOLDER=${BUILD_TAG}_bin
+          export BUILD_BIN_FOLDER=${BUILD_TAG}_x64
           echo "BUILD_BIN_FOLDER=${BUILD_BIN_FOLDER}" >> $GITHUB_ENV
           mkdir ${BUILD_BIN_FOLDER}
           echo ${{ github.sha }} > ${BUILD_BIN_FOLDER}/Release.txt
