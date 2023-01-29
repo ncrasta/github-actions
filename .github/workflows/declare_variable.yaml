@@ -16,6 +16,9 @@ jobs:
           out=$( [ "${{ steps.step1.status }}" == "success" ] && echo true || echo false )
           echo "OUT=$out" >> $GITHUB_ENV
 
+      - name: Debug step 1 status
+        run: echo "Step 1 status: ${{ steps.step1.status }}"
+
       - name: Print
         run: echo $OUT
 
