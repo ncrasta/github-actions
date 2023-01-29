@@ -11,9 +11,13 @@ jobs:
         id: step1
         run: echo "Step 1"
 
+      - name: Step 2
+        id: step2
+        run: echo "Step 2"
+
       - name: Store result
         run: |
-          out=$( [ "${{ steps.step1.outcome }}" == "success" ] && echo true || echo false )
+          out=$( [ "${{ steps.step1.outcome }}" == "success" ] && [ "${{ steps.step1.outcome }}" == "success" ] && echo true || echo false )
           echo "OUT=$out" >> $GITHUB_ENV
 
       - name: Debug step 1 outcome
