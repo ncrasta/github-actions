@@ -21,7 +21,7 @@ jobs:
 
       - name: Store result
         run: |
-          out=$( steps.step1.status == "success" && steps.step2.status == "success" && steps.step3.status == "success" )
+          out=$( steps.step1.outcome == "success" && steps.step2.outcome == "success" && steps.step3.outcome == "success" )
           echo "OUT=$out" >> $GITHUB_ENV
 
       - name: Print
