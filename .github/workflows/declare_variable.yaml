@@ -1,0 +1,26 @@
+name: Variables
+on:
+  push:
+
+jobs:
+  run-github-actions:
+  - name: Step 1
+    id: step1
+    run: echo "Step 1"
+
+  - name: Step 2
+    id: step2
+    run: echo "Step 2"
+
+  - name: Step 3
+    id: step3
+    run: echo "Step 3"
+
+  - name: Store result
+    run: |
+      out=$( [ "${{ steps.step1.status }}" == "success" ] && [ "${{ steps.step2.status }}" == "success" ] && [ "${{ steps.step3.status }}" == "success" ] )
+      echo "OUT=$out" >> $GITHUB_ENV
+
+  - name: Print
+    run: echo $OUT
+
