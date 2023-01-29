@@ -39,10 +39,8 @@ jobs:
         run: |
           echo "Step 3 outcome: ${{ steps.step3.outcome }}"
 
-      - name: Debug OUT
+      - name: Print        
         run: |
-          echo "steps.out.OUT: ${{ steps.out.OUT }}"
-
-      - name: Print
-        if: steps.out.run.outputs.OUT == 'true'
-        run: echo $OUT
+          if [ $OUT  == 'true' ]; then
+          echo $OUT
+          fi
