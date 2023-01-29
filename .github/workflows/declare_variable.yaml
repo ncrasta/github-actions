@@ -18,7 +18,7 @@ jobs:
 
       - name: Debug step 1 status
         run: |
-          echo "Step 1 status: ${{ steps.step1.status }}"
+          echo "Step 1 status: ${{ steps.step1.outcome }}"
 
       - name: Print
         run: echo $OUT
