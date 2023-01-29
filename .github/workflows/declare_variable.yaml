@@ -20,6 +20,7 @@ jobs:
         run: echo "Step 3"
 
       - name: Store result
+        id: out
         run: |
           out1=$( [ "${{ steps.step1.outcome }}" == "success" ] && echo true || echo false )
           out2=$( [ "${{ steps.step2.outcome }}" == "success" ] && [ "${{ steps.step3.outcome }}" == "success" ] && echo true || echo false )
@@ -39,5 +40,5 @@ jobs:
           echo "Step 3 outcome: ${{ steps.step3.outcome }}"
 
       - name: Print
-        if: $OUT == 'true'
+        if: steps.out.OUT == 'true'
         run: echo $OUT
