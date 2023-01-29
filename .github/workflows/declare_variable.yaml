@@ -13,7 +13,7 @@ jobs:
 
       - name: Store result
         run: |
-          out=$( steps.step1.status == "success" )
+          out=$( [ "${{ steps.step1.status }}" == "success" ] && echo true || echo false )
           echo "OUT=$out" >> $GITHUB_ENV
 
       - name: Print
