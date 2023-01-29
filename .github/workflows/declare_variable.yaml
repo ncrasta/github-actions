@@ -39,4 +39,5 @@ jobs:
           echo "Step 3 outcome: ${{ steps.step3.outcome }}"
 
       - name: Print
+        if: $OUT == 'true'
         run: echo $OUT
