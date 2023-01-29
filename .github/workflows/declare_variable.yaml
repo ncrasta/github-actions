@@ -21,7 +21,9 @@ jobs:
 
       - name: Store result
         run: |
-          out=$( [ "${{ steps.step1.outcome }}" == "success" ] && [ "${{ steps.step2.outcome }}" == "success" ] && [ "${{ steps.step3.outcome }}" == "success" ] && echo true || echo false )
+          out1=$( [ "${{ steps.step1.outcome }}" == "success" ] )
+          out2=$( [ "${{ steps.step2.outcome }}" == "success" ] && [ "${{ steps.step3.outcome }}" == "success" ] )
+          out=$out1 && $out2 && echo true || echo false
           echo "OUT=$out" >> $GITHUB_ENV
 
       - name: Debug step 1 outcome
