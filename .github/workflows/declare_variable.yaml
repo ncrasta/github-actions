@@ -11,17 +11,9 @@ jobs:
         id: step1
         run: echo "Step 1"
 
-      - name: Step 2
-        id: step2
-        run: echo "Step 2"
-
-      - name: Step 3
-        id: step3
-        run: echo "Step 3"
-
       - name: Store result
         run: |
-          out=$( steps.step1.outcome == "success" && steps.step2.outcome == "success" && steps.step3.outcome == "success" )
+          out=$( steps.step1.outcome == "success" )
           echo "OUT=$out" >> $GITHUB_ENV
 
       - name: Print
