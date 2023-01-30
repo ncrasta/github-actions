@@ -40,11 +40,11 @@ jobs:
           echo "Step 3 outcome: ${{ steps.step3.outcome }}"
 
       - name: Print on Success
-        if: $${{ env.OUT }}
+        if: env.OUT == 'true'
         run: |
           echo $OUT
 
       - name: Print on Failure
-        if: $${{ env.OUT }} != 'true'
+        if: env.OUT == 'false'
         run: |
           echo $OUT
